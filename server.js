@@ -11,13 +11,16 @@ const HOST = '0.0.0.0';
 
 const app = express();
 
-let page = `
-<div>Hello world!</div>
-<div>hostname: ${os.hostname()}</div>
-<div>redis is connected: ${isRedisConnected}</div>
-`;
+const page = () => {
+  return `
+    <div>Hello world!</div>
+    <div>hostname: ${os.hostname()}</div>
+    <div>redis is connected: ${isRedisConnected}</div>
+  `;
+}
+
 app.get('/', (req, res) => {
-  res.send(page);
+  res.send(page());
 });
 
 app.listen(PORT, HOST);
