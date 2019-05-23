@@ -1,8 +1,8 @@
 version: "3"
 services:
   web:
-    image: server
-    container_name: "server"
+    image: chiachun0920/friendlyhello
+    container_name: "web"
     deploy:
       replicas: 5
       resources:

@@ -10,8 +10,14 @@ const PORT = 8080;
 const HOST = '0.0.0.0';
 
 const app = express();
+
+let page = `
+<div>Hello world!</div>
+<div>hostname: ${os.hostname()}</div>
+<div>redis is connected: ${isRedisConnected}</div>
+`;
 app.get('/', (req, res) => {
-    res.send(`Hello world\nhostname: ${os.hostname()}\nredis is connected: ${isRedisConnected}\n`);
+  res.send(page);
 });
 
 app.listen(PORT, HOST);
